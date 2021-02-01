@@ -21,25 +21,38 @@ def opdracht1while():
         print(f'{"* "*j}')
         j-=1
 
+#opdracht 1 met 1 for loop?
+def opdracht1eenforloop(lengte):
+    count=lengte
+    for i in range(1, lengte*2):
+        if i<lengte:
+            print(f'{"* " * i}')
+        if i >= lengte:
+            print(f'{"* "*count}')
+            count -= 1
 
 ## OPDRACHT 2 ##
 
 def tekstcheck():
     input1=input('Geef een string:')
     input2=input('Geef een string:')
-    for i in range(len(max(input1, input2))):
+    for i in range(len(min(input1, input2))):
         if input1[i] != input2[i]:
-            return i
-# print(f'Het eerste verschil zit op index:{tekstcheck()}')
+            return print(f'Het eerste verschil zit op index: {i}')
+        else:
+            return print(f'Het eerste verschil zit op index: {min(len(input1), len(input2))}')
 
 ## OPDRACHT 3##
+
 ## A ##
+
 def count(x, lst):
     count = 0
     for i in lst:
         if i == x:
             count +=1
     return count
+
 ## B ##
 def neighbourdiff(lst):
     biggestdiff = 0
@@ -58,6 +71,7 @@ def eisenchecker(lst):
 
 def biebfunctiepalindroomchecker(str):
     return str == ''.join(reversed(str))
+
 
 def palindroomchecker(str):
     return str == str[::-1]
