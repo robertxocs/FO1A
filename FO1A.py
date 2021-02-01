@@ -9,6 +9,12 @@ def opdracht1for():
         print(f'{"* "*i}')
     for j in range(lengte, 0, -1):
         print(f'{"* "*j}')
+def opdracht1foranderekant():
+    lengte = int(input('Hoe groot?'))
+    for i in range(lengte, 0, -1):
+        print(f'{"* "*i}')
+    for j in range(2, lengte+1, 1):
+        print(f'{"* "*j}')
 
 def opdracht1while():
     lengte = int(input('Hoe groot?'))
@@ -20,7 +26,18 @@ def opdracht1while():
     while j != 0:
         print(f'{"* "*j}')
         j-=1
+def opdracht1whileanderekant():
+    lengte = int(input('Hoe groot?'))
+    i = 1
+    j = lengte
+    while j != 0:
+        print(f'{"* " * j}')
+        j -= 1
+    while i <= lengte:
+        print(f'{"* " * i}')
+        i += 1
 
+opdracht1whileanderekant()
 #opdracht 1 met 1 for loop?
 def opdracht1eenforloop(lengte):
     count=lengte
@@ -144,12 +161,9 @@ def cyclic_binary_shift(ch, n):
     return ans
 
 ## OPDRACHT 10 ##
-def fibonaccifinder(n):
-    fibonaccilist = [0, 1]
-    for i in range(1, n+1):
-        ans = fibonaccilist[i-1] + fibonaccilist[i]
-        fibonaccilist.append(ans)
-    return fibonaccilist[n]
+def fibonaccifinder(n, a=0, b=1):
+    return fibonaccifinder(n-1, b, a+b) if n > 1 else (a, b)[n]
+
 
 ## OPDRACHT 11 ##
 def caesarcijfers():
